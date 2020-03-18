@@ -1,0 +1,39 @@
+<odoo>
+  <record id="action_stock_zone" model="ir.actions.act_window">
+    <field name="name">Stock Zone</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">stock.zone</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+  </record>
+
+  <record id="action_location_prod_quant" model="ir.actions.act_window">
+    <field name="name">Product Location Quant</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">product.location.quant</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+  </record>
+
+  <menuitem id="root_stock_zone"
+	    name="Stock Zone"
+	    parent="stock.menu_warehouse_config"/>
+  
+  <menuitem id="submenu_stock_zone"
+	    name="Stock Zone"
+	    parent="imm_stock.root_stock_zone"
+	    action="action_stock_zone"/>
+
+  <menuitem id="submenu_prod_location_quant"
+	    name="Product Location Quantity"
+	    parent="imm_stock.root_stock_zone"
+	    action="action_location_prod_quant"/>
+
+  <!-- <menuitem id="submenu_rma_conditions_lines" -->
+  <!-- 	    name="Conditions Lines" -->
+  <!-- 	    parent="wms.root_rma" -->
+  <!-- 	    action="action_rma_conditions_lines"/> -->
+
+  </odoo>

@@ -1,0 +1,42 @@
+<odoo>
+  <record id="tree_stock_location_inh" model="ir.ui.view">
+    <field name="name">stock.location.tree</field>
+    <field name="model">stock.location</field>
+    <field name="inherit_id" ref="stock.view_location_tree2"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='usage']" position="after">
+  	<field name="route"/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="form_stock_location_inh" model="ir.ui.view">
+    <field name="name">form.stock.location.inh</field>
+    <field name="model">stock.location</field>
+    <field name="inherit_id" ref="stock.view_location_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//form/group/group/field[@name='barcode']" position="after">
+	<field name="route" placeholder="Rute"/>
+      </xpath>
+      <xpath expr="//form/field[@name='comment']" position="replace">
+      	<notebook>
+      	  <page id="comment_page" string="Comment">
+      	    <group col="2">
+      	      <field name="external_comment" placeholder="External note..."/>
+      	    </group>
+      	  </page>
+      	  <page id="quantity_page" string="Product Quantity">
+      	    <group string='Products Minimal Quantities' col="2">
+      	      <field name="product_quantity_ids" nolabel="1">
+      		<tree name="Promotion Rule Lines" editable="top">
+                  <field name="product_id" string="Product"/>
+                  <field name="minimal_quant" string="Minimal Quantity"/>
+                </tree>
+      	      </field>
+      	    </group>
+      	  </page>
+      	</notebook>
+      </xpath>
+    </field>
+  </record>
+</odoo>

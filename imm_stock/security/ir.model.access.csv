@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_stock_zone,user_stock_zone,model_stock_zone,base.group_user,1,0,0,0
+manager_stock_zone,manager_stock_zone,model_stock_zone,stock.group_stock_manager,1,1,1,1
+user_stock_zone_line,user_stock_zone_line,model_zone_line,base.group_user,1,0,0,0
+manager_stock_zone_line,manager_stock_zone_line,model_zone_line,stock.group_stock_manager,1,1,1,1
